@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+
+<section
+    style="background-image: url('{% static 'assets/img/background.png' %}'); background-repeat: no-repeat; background-size: cover;"
+    class="py-9">
+
+    <div id="Contact" class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="card mb-3 bg-white rounded-1">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-7 col-lg-6 px-md-2 px-xl-6 text-center text-md-start">
+                  <div class="card-body px-4 py-5 p-lg-3 p-md-4"><br>
+                    <div class="jumbotron">
+                      <h1 class="display-4">Hello, Tikamgarh!</h1>
+                      <p class="lead">It's time to go back to school.</p>
+                      <hr class="my-4">
+                      <p>Registration process for <b>"Entrence Test"</b> is started.</p>
+                      <p class="lead">
+                        <a class="btn btn-primary btn-lg" href="EntrenceTest" role="button">Register here</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-5 mb-5 mt-5 col-lg-6 text-md-center"><img class="rounded-1 img-fluid"
+                    src="{% static 'assets/img/illustrations/teacher-students.jpg' %}" alt="" /></div>
+                
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+        <!-- end of .container-->
+
+</section>
+{% endblock %}

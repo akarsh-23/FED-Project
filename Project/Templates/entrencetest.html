@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+
+<section style="background-image: url('{% static 'assets/img/background.png' %}'); background-repeat: no-repeat; background-size: cover;" class="py-9">
+
+  <div id="Contact" class="container">
+    <div class="row-sm">
+      <div class="col-12">
+        <div class="card mb-3 bg-white rounded-1">
+          <div class="row g-0 align-items-center">
+            <div class="px-md-2 px-xl-6 text-center text-md-start">
+              <div class="card-body px-4 py-5 p-lg-3 p-md-4"><br>
+                <h1 class="mb-4 fw-bold">Entrence Test Registration<br class="d-md-none d-xxl-block" /></h1>
+                <form method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <div class="container">
+                    <div class="row mb-4">
+                      <div class="col">{{ test_registration_form.FIRSTNAME.label_tag }} {{ test_registration_form.FIRSTNAME }}</div>
+                      <div class="col">{{ test_registration_form.MIDDLENAME.label_tag }} {{ test_registration_form.MIDDLENAME }}</div>
+                      <div class="col">{{ test_registration_form.LASTNAME.label_tag }} {{ test_registration_form.LASTNAME }}</div>
+                    </div>
+                    <div class="row mb-4">
+                      <div class="col">{{ test_registration_form.DATEOFBIRTH.label_tag }}{{ test_registration_form.DATEOFBIRTH }}</div>
+                      <div class="col">{{ test_registration_form.FATHERFIRSTNAME.label_tag }}{{ test_registration_form.FATHERFIRSTNAME }}</div>
+                      <div class="col">{{ test_registration_form.PHONE.label_tag }}{{ test_registration_form.PHONE }}</div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">{{ test_registration_form.CLASSOFADMISSION.label_tag }}{{ test_registration_form.CLASSOFADMISSION }}</div>
+                        <div class="col">{{ test_registration_form.MARKSHEET.label_tag }}{{ test_registration_form.MARKSHEET }}</div>
+                        <div class="col">{{ test_registration_form.IMAGE.label_tag }}{{ test_registration_form.IMAGE }}</div>
+                    </div>
+                  </div>
+                  <input class="btn btn-primary btn-lg" type="submit" value="Submit">
+                </form>
+                <br>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of .container-->
+
+</section>
+{% endblock %}

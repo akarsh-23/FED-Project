@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+
+<section style="background-image: url('{% static 'assets/img/background.png' %}'); background-repeat: no-repeat; background-size: cover;" class="py-9">
+
+  <div id="Contact">
+    <div style="width: 90%; margin: auto;" class="row">
+      <div class="col-12">
+        <div class="card bg-white rounded-1">
+          <div class="align-items-center">
+            <div class="text-center text-md-start">
+              <div class="card-body"><br>
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">Image</th>
+                        <th scope="col">Marksheet</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Middle Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Father's Name</th>
+                        <th scope="col">Date Of Birth</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Class of Admission</th>
+                        <th scope="col">Payment Status</th>
+                        <th scope="col">Result</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for model in data %}
+                      <tr>
+                        <td><a href="{{base_dir}}{{model.IMAGE}}"><img style="width: 100px;" src={{base_dir}}{{model.IMAGE}}/><img></a></td>
+                        <td><a href="{{base_dir}}{{model.MARKSHEET}}"><img style="width: 100px;" src={{base_dir}}{{model.MARKSHEET}}/><img></a></td>
+                        <td>{{model.FIRSTNAME}}</td>
+                        <td>{{model.MIDDLENAME}}</td>
+                        <td>{{model.LASTNAME}}</td>
+                        <td>{{model.FATHERFIRSTNAME}}</td>
+                        <td>{{model.DATEOFBIRTH}}</td>
+                        <td>{{model.PHONE}}</td>
+                        <td>{{model.CLASSOFADMISSION}}</td>
+                        <td>{{model.PAYMENT}}</td>
+                        <td>{{model.RESULT}}</td>
+                      </img>
+                        {% endfor %}
+                    </tbody>
+                  </table>
+                <br>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of .container-->
+
+</section>
+{% endblock %}
